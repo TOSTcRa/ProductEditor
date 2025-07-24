@@ -39,11 +39,33 @@
   }
 }
 
-.product-details {
+.product {
   display: flex;
   gap: 24px;
   align-items: flex-start;
   padding: 30px 20px;
+  &__photos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: "Raleway";
+    font-weight: 400;
+    font-size: 18px;
+    color: $primary-color;
+  }
+  &__photo {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  &__image {
+    width: 100%;
+    max-width: 225px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: contain;
+    box-shadow: 2px 2px 4px 0 rgba($color: $shadow-color, $alpha: 0.1);
+  }
 }
 
 .info-grid {
@@ -51,15 +73,13 @@
   grid-template-columns: 1fr 1fr;
   gap: 15px;
   flex: 1;
-}
-
-.info-block {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  background-color: #fafafa;
-  border-right: 1px solid $border-color;
-  padding-right: 15px;
+  &__block {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-right: 1px solid $border-color;
+    padding-right: 15px;
+  }
 }
 
 .info-row {
@@ -89,21 +109,72 @@
   }
 }
 
-.photo-column {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+.list {
+  border-top: 1px solid #8184af4d;
   font-family: "Raleway";
-  font-weight: 400;
-  font-size: 18px;
   color: $primary-color;
-}
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
 
-.device-photo,
-.data-plate {
-  width: 180px;
-  height: auto;
-  border-radius: 10px;
-  object-fit: contain;
-  box-shadow: 2px 2px 4px 0 rgba($color: $shadow-color, $alpha: 0.1);
+  &__title {
+    font-size: 25px;
+    font-weight: 700;
+  }
+
+  &__badge {
+    background-color: #8184af33;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 15px;
+    color: #52536980;
+  }
+
+  &__table-wrapper {
+    overflow-x: auto;
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  &__table-head {
+    text-align: left;
+    font-weight: 700;
+    border-top: 1px solid #8184af4d;
+    font-size: 22px;
+  }
+
+  &__table-row {
+    border-bottom: 1px solid #8184af26;
+    font-weight: 400;
+    font-size: 20px;
+    &--head {
+      border-bottom: 1px solid #8184af26;
+    }
+  }
+
+  &__table-cell {
+    padding: 0.75rem;
+    white-space: nowrap;
+
+    &--head {
+      border-right: 1px solid #8184af26;
+    }
+
+    &--icon {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: space-between;
+  }
 }
