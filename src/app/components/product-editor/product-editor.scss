@@ -117,10 +117,12 @@
     display: flex;
     align-items: center;
     gap: 15px;
-    margin-bottom: 15px;
+    margin: 15px 0;
   }
 
   &__title {
+    margin: 0;
+    padding: 0 30px;
     font-size: 25px;
     font-weight: 700;
   }
@@ -159,7 +161,7 @@
   }
 
   &__table-cell {
-    padding: 0.75rem;
+    padding: 10px 30px;
     white-space: nowrap;
 
     &--head {
@@ -169,12 +171,7 @@
     &--icon {
       display: flex;
       align-items: center;
-      gap: 0.4rem;
+      justify-content: space-between;
     }
-  }
-
-  &__icon {
-    display: flex;
-    justify-content: space-between;
   }
 }
