@@ -225,16 +225,16 @@
           </tr>
         </thead>
         <tbody class="list__table-body">
-          <tr class="list__table-row">
-            <td class="list__table-cell">G112082</td>
-            <td class="list__table-cell">NEC</td>
-            <td class="list__table-cell">Projectors</td>
-            <td class="list__table-cell">CP34B</td>
-            <td class="list__table-cell">52</td>
-            <td class="list__table-cell">U/Ref</td>
-            <td class="list__table-cell">Script</td>
+          <tr class="list__table-row" *ngFor="let loc of product.location">
+            <td class="list__table-cell">{{ loc.id }}</td>
+            <td class="list__table-cell">{{ loc.brand }}</td>
+            <td class="list__table-cell">{{ loc.category }}</td>
+            <td class="list__table-cell">{{ loc.device_pn }}</td>
+            <td class="list__table-cell">{{ loc.qty }}</td>
+            <td class="list__table-cell">{{ loc.condition }}</td>
+            <td class="list__table-cell">{{ loc.edit_user }}</td>
             <td class="list__table-cell list__table-cell--icon">
-              No Lamp
+              {{ loc.notes }}
               <img
                 src="/icons/product-info/more.svg"
                 alt="More"
@@ -242,16 +242,16 @@
               />
             </td>
           </tr>
-          <tr class="list__table-row">
-            <td class="list__table-cell">G112082</td>
-            <td class="list__table-cell">NEC</td>
-            <td class="list__table-cell">Projectors</td>
-            <td class="list__table-cell">CP34B</td>
-            <td class="list__table-cell">52</td>
-            <td class="list__table-cell">U/Ref</td>
-            <td class="list__table-cell">Script</td>
+          <tr class="list__table-row" *ngFor="let loc of product.location">
+            <td class="list__table-cell">{{ loc.id }}</td>
+            <td class="list__table-cell">{{ loc.brand }}</td>
+            <td class="list__table-cell">{{ loc.category }}</td>
+            <td class="list__table-cell">{{ loc.device_pn }}</td>
+            <td class="list__table-cell">{{ loc.qty }}</td>
+            <td class="list__table-cell">{{ loc.condition }}</td>
+            <td class="list__table-cell">{{ loc.edit_user }}</td>
             <td class="list__table-cell list__table-cell--icon">
-              No Lamp
+              {{ loc.notes }}
               <img
                 src="/icons/product-info/more.svg"
                 alt="More"
@@ -259,16 +259,16 @@
               />
             </td>
           </tr>
-          <tr class="list__table-row">
-            <td class="list__table-cell">G112082</td>
-            <td class="list__table-cell">NEC</td>
-            <td class="list__table-cell">Projectors</td>
-            <td class="list__table-cell">CP34B</td>
-            <td class="list__table-cell">52</td>
-            <td class="list__table-cell">U/Ref</td>
-            <td class="list__table-cell">Script</td>
+          <tr class="list__table-row" *ngFor="let loc of product.location">
+            <td class="list__table-cell">{{ loc.id }}</td>
+            <td class="list__table-cell">{{ loc.brand }}</td>
+            <td class="list__table-cell">{{ loc.category }}</td>
+            <td class="list__table-cell">{{ loc.device_pn }}</td>
+            <td class="list__table-cell">{{ loc.qty }}</td>
+            <td class="list__table-cell">{{ loc.condition }}</td>
+            <td class="list__table-cell">{{ loc.edit_user }}</td>
             <td class="list__table-cell list__table-cell--icon">
-              No Lamp
+              {{ loc.notes }}
               <img
                 src="/icons/product-info/more.svg"
                 alt="More"
@@ -276,16 +276,16 @@
               />
             </td>
           </tr>
-          <tr class="list__table-row">
-            <td class="list__table-cell">G112082</td>
-            <td class="list__table-cell">NEC</td>
-            <td class="list__table-cell">Projectors</td>
-            <td class="list__table-cell">CP34B</td>
-            <td class="list__table-cell">52</td>
-            <td class="list__table-cell">U/Ref</td>
-            <td class="list__table-cell">Script</td>
+          <tr class="list__table-row" *ngFor="let loc of product.location">
+            <td class="list__table-cell">{{ loc.id }}</td>
+            <td class="list__table-cell">{{ loc.brand }}</td>
+            <td class="list__table-cell">{{ loc.category }}</td>
+            <td class="list__table-cell">{{ loc.device_pn }}</td>
+            <td class="list__table-cell">{{ loc.qty }}</td>
+            <td class="list__table-cell">{{ loc.condition }}</td>
+            <td class="list__table-cell">{{ loc.edit_user }}</td>
             <td class="list__table-cell list__table-cell--icon">
-              No Lamp
+              {{ loc.notes }}
               <img
                 src="/icons/product-info/more.svg"
                 alt="More"
@@ -321,45 +321,57 @@
           </tr>
         </thead>
         <tbody class="list__table-body">
-          <tr class="list__table-row">
-            <td class="list__table-cell">325064386872</td>
-            <td class="list__table-cell">SRQ/P,Ne_ME331X...</td>
-            <td class="list__table-cell">UEG122535</td>
-            <td class="list__table-cell">G122535</td>
-            <td class="list__table-cell">3300 ANSI 3LCD Projector 1080p...</td>
-            <td class="list__table-cell">114,27</td>
-            <td class="list__table-cell">274</td>
-            <td class="list__table-cell">3 376</td>
+          <tr
+            class="list__table-row"
+            *ngFor="let ebay of product.ebay_listings"
+          >
+            <td class="list__table-cell">{{ ebay.listing_id }}</td>
+            <td class="list__table-cell">{{ ebay.sku }}</td>
+            <td class="list__table-cell">{{ ebay.condition_id }}</td>
+            <td class="list__table-cell">{{ ebay.product_id }}</td>
+            <td class="list__table-cell">{{ ebay.title }}</td>
+            <td class="list__table-cell">{{ ebay.price }}</td>
+            <td class="list__table-cell">{{ ebay.listing_qty }}</td>
+            <td class="list__table-cell">{{ ebay.inventory_qty }}</td>
           </tr>
-          <tr class="list__table-row">
-            <td class="list__table-cell">325064386872</td>
-            <td class="list__table-cell">SRQ/P,Ne_ME331X...</td>
-            <td class="list__table-cell">UEG122535</td>
-            <td class="list__table-cell">G122535</td>
-            <td class="list__table-cell">3300 ANSI 3LCD Projector 1080p...</td>
-            <td class="list__table-cell">114,27</td>
-            <td class="list__table-cell">274</td>
-            <td class="list__table-cell">3 376</td>
+          <tr
+            class="list__table-row"
+            *ngFor="let ebay of product.ebay_listings"
+          >
+            <td class="list__table-cell">{{ ebay.listing_id }}</td>
+            <td class="list__table-cell">{{ ebay.sku }}</td>
+            <td class="list__table-cell">{{ ebay.condition_id }}</td>
+            <td class="list__table-cell">{{ ebay.product_id }}</td>
+            <td class="list__table-cell">{{ ebay.title }}</td>
+            <td class="list__table-cell">{{ ebay.price }}</td>
+            <td class="list__table-cell">{{ ebay.listing_qty }}</td>
+            <td class="list__table-cell">{{ ebay.inventory_qty }}</td>
           </tr>
-          <tr class="list__table-row">
-            <td class="list__table-cell">325064386872</td>
-            <td class="list__table-cell">SRQ/P,Ne_ME331X...</td>
-            <td class="list__table-cell">UEG122535</td>
-            <td class="list__table-cell">G122535</td>
-            <td class="list__table-cell">3300 ANSI 3LCD Projector 1080p...</td>
-            <td class="list__table-cell">114,27</td>
-            <td class="list__table-cell">274</td>
-            <td class="list__table-cell">3 376</td>
+          <tr
+            class="list__table-row"
+            *ngFor="let ebay of product.ebay_listings"
+          >
+            <td class="list__table-cell">{{ ebay.listing_id }}</td>
+            <td class="list__table-cell">{{ ebay.sku }}</td>
+            <td class="list__table-cell">{{ ebay.condition_id }}</td>
+            <td class="list__table-cell">{{ ebay.product_id }}</td>
+            <td class="list__table-cell">{{ ebay.title }}</td>
+            <td class="list__table-cell">{{ ebay.price }}</td>
+            <td class="list__table-cell">{{ ebay.listing_qty }}</td>
+            <td class="list__table-cell">{{ ebay.inventory_qty }}</td>
           </tr>
-          <tr class="list__table-row">
-            <td class="list__table-cell">325064386872</td>
-            <td class="list__table-cell">SRQ/P,Ne_ME331X...</td>
-            <td class="list__table-cell">UEG122535</td>
-            <td class="list__table-cell">G122535</td>
-            <td class="list__table-cell">3300 ANSI 3LCD Projector 1080p...</td>
-            <td class="list__table-cell">114,27</td>
-            <td class="list__table-cell">274</td>
-            <td class="list__table-cell">3 376</td>
+          <tr
+            class="list__table-row"
+            *ngFor="let ebay of product.ebay_listings"
+          >
+            <td class="list__table-cell">{{ ebay.listing_id }}</td>
+            <td class="list__table-cell">{{ ebay.sku }}</td>
+            <td class="list__table-cell">{{ ebay.condition_id }}</td>
+            <td class="list__table-cell">{{ ebay.product_id }}</td>
+            <td class="list__table-cell">{{ ebay.title }}</td>
+            <td class="list__table-cell">{{ ebay.price }}</td>
+            <td class="list__table-cell">{{ ebay.listing_qty }}</td>
+            <td class="list__table-cell">{{ ebay.inventory_qty }}</td>
           </tr>
         </tbody>
       </table>
@@ -384,11 +396,14 @@
           </tr>
         </thead>
         <tbody class="list__table-body">
-          <tr class="list__table-row">
-            <td class="list__table-cell">G112082</td>
-            <td class="list__table-cell">G900559</td>
+          <tr
+            class="list__table-row"
+            *ngFor="let same of product.same_products"
+          >
+            <td class="list__table-cell">{{ same.original_id }}</td>
+            <td class="list__table-cell">{{ same.same_id }}</td>
             <td class="list__table-cell list__table-cell--icon">
-              Script
+              {{ same.fk_edit_employee }}
               <img
                 src="/icons/product-info/more.svg"
                 alt="More"
