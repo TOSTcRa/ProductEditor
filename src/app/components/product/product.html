@@ -1,6 +1,11 @@
-<div class="page">
+<div *ngIf="productService.loading | async">Loading...</div>
+<div *ngIf="productService.error | async as errorMsg" class="error">
+  {{ errorMsg }}
+</div>
+
+<div class="page" *ngIf="productService.productData$ | async as product">
   <header class="header">
-    <h3 class="header__logo">G112082</h3>
+    <h3 class="header__logo">{{ product.id }}</h3>
     <nav class="header__nav">
       <ul class="header__nav-list">
         <li class="header__nav-item">
@@ -22,7 +27,12 @@
           <img src="/icons/header/maximize.svg" alt="" class="header__icon" />
         </li>
         <li class="header__nav-item">
-          <img src="/icons/header/close.svg" alt="" class="header__icon" />
+          <img
+            src="/icons/header/close.svg"
+            alt=""
+            class="header__icon"
+            (click)="closeModal()"
+          />
         </li>
       </ul>
     </nav>
@@ -34,7 +44,7 @@
         <div class="info-row">
           <strong class="info-row__label">Brand:</strong>
           <div class="info-row__value">
-            NEC
+            {{ product.brand }}
             <img
               src="/icons/product-info/more.svg"
               alt=""
@@ -44,47 +54,47 @@
         </div>
         <div class="info-row">
           <strong class="info-row__label">Model/Series:</strong>
-          <div class="info-row__value">P401W</div>
+          <div class="info-row__value">{{ product.model_series }}</div>
         </div>
         <div class="info-row">
           <strong class="info-row__label">Devise P/N:</strong>
-          <div class="info-row__value">NP-P401W / NP23LP+</div>
+          <div class="info-row__value">{{ product.device_pn }}</div>
         </div>
         <div class="info-row">
           <strong class="info-row__label">Dev. Type:</strong>
-          <div class="info-row__value">2013,4000,1280,16:10,LCD</div>
+          <div class="info-row__value">{{ product.dev_type }}</div>
         </div>
         <div class="info-row">
           <strong class="info-row__label">RNK:</strong>
-          <div class="info-row__value">237</div>
+          <div class="info-row__value">{{ product.rnk }}</div>
         </div>
         <div class="info-row">
           <strong class="info-row__label">Min Price:</strong>
-          <div class="info-row__value">57,19</div>
+          <div class="info-row__value">{{ product.min_price }}</div>
         </div>
         <div class="info-row">
           <strong class="info-row__label">Max Price:</strong>
-          <div class="info-row__value">100,97</div>
+          <div class="info-row__value">{{ product.max_price }}</div>
         </div>
         <div class="info-row">
           <strong class="info-row__label">Quantity:</strong>
-          <div class="info-row__value">3 376</div>
+          <div class="info-row__value">{{ product.quantity }}</div>
         </div>
         <div class="info-row">
-          <strong class="info-row__label">EPrq:</strong>
-          <div class="info-row__value">65</div>
+          <strong class="info-row__label">ePrq:</strong>
+          <div class="info-row__value">{{ product.ePrq }}</div>
         </div>
         <div class="info-row">
-          <strong class="info-row__label">EAaq:</strong>
-          <div class="info-row__value">6</div>
+          <strong class="info-row__label">eA4q:</strong>
+          <div class="info-row__value">{{ product.eA4q }}</div>
         </div>
         <div class="info-row">
           <strong class="info-row__label">Photo_device:</strong>
           <div class="info-row__link">
-            https://drive.google.com...
+            {{ product.photo_device }}
             <img
               src="/icons/product-info/link.svg"
-              alt=""
+              alt="Link Icon"
               class="info-row__icon"
             />
           </div>
@@ -95,7 +105,7 @@
         <div class="info-row">
           <strong class="info-row__label">Sku:</strong>
           <div class="info-row__value">
-            ???/P_Ne_P401W/??G112082
+            {{ product.sku }}
             <img
               src="/icons/product-info/more.svg"
               alt=""
@@ -106,7 +116,7 @@
         <div class="info-row">
           <strong class="info-row__label">L-User:</strong>
           <div class="info-row__value">
-            Iryna
+            {{ product.l_user }}
             <img
               src="/icons/product-info/more.svg"
               alt=""
@@ -117,7 +127,7 @@
         <div class="info-row">
           <strong class="info-row__label">Category:</strong>
           <div class="info-row__value">
-            Projector
+            {{ product.category }}
             <img
               src="/icons/product-info/more.svg"
               alt=""
@@ -128,7 +138,7 @@
         <div class="info-row">
           <strong class="info-row__label">E-User:</strong>
           <div class="info-row__value">
-            Script
+            {{ product.e_user }}
             <img
               src="/icons/product-info/more.svg"
               alt=""
@@ -138,38 +148,38 @@
         </div>
         <div class="info-row">
           <strong class="info-row__label">Green_id:</strong>
-          <div class="info-row__value">Y</div>
+          <div class="info-row__value">{{ product.green_id }}</div>
         </div>
         <div class="info-row">
           <strong class="info-row__label">Edit_at:</strong>
-          <div class="info-row__value">30.8.2024 12:32</div>
+          <div class="info-row__value">{{ product.edit_at }}</div>
         </div>
         <div class="info-row">
           <strong class="info-row__label">Create_at:</strong>
-          <div class="info-row__value">30.8.2024 12:32</div>
+          <div class="info-row__value">{{ product.create_at }}</div>
         </div>
         <div class="info-row">
           <strong class="info-row__label">Amazon Listing Src:</strong>
           <div class="info-row__link">
-            https://www.amazon.com...
+            {{ product.amazon_listing_src }}
             <img
               src="/icons/product-info/link.svg"
-              alt=""
+              alt="Link Icon"
               class="info-row__icon"
             />
           </div>
         </div>
         <div class="info-row">
-          <strong class="info-row__label">ELCCq:</strong>
-          <div class="info-row__value">0</div>
+          <strong class="info-row__label">elCcq:</strong>
+          <div class="info-row__value">{{ product.elCcq }}</div>
         </div>
         <div class="info-row">
           <strong class="info-row__label">Amazq:</strong>
-          <div class="info-row__value">9</div>
+          <div class="info-row__value">{{ product.amazq }}</div>
         </div>
         <div class="info-row">
           <strong class="info-row__label">Notes:</strong>
-          <div class="info-row__value">------------</div>
+          <div class="info-row__value">{{ product.notes }}</div>
         </div>
       </div>
     </section>

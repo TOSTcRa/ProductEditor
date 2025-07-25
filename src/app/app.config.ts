@@ -2,6 +2,7 @@ import {
   ApplicationConfig,
   provideBrowserGlobalErrorListeners,
   provideZoneChangeDetection,
+  Component,
 } from '@angular/core';
 import { provideHttpClient } from '@angular/common/http';
 
